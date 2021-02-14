@@ -7,9 +7,9 @@ import { TokenLC } from '@app/entities/categorias/token';
 import { AutorizacaoRepositorioService } from '@app/repositories/AutorizacaoRepositorio.service';
 
 @Component({
-  selector: 'app-Cadastrar',
-  templateUrl: './Cadastrar.component.html',
-  styleUrls: ['./Cadastrar.component.scss'],
+  selector: 'app-cadastrar',
+  templateUrl: './cadastrar.component.html',
+  styleUrls: ['./cadastrar.component.scss'],
 })
 export class CadastrarComponent implements OnInit {
   cliente: Cliente = new Cliente();
