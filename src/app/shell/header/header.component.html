@@ -1,0 +1,33 @@
+<mat-toolbar class="mat-elevation-z6 navbar" color="primary">
+  <div fxHide.gt-sm fxLayoutAlign="start center">
+    <button class="menu-button" mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title">{{ title }}</span>
+  </div>
+  <div fxHide.lt-md>
+    <a class="brand">LocaCar :: Locações de veículos</a>
+    <button mat-button routerLink="/home" routerLinkActive="active">
+      <mat-icon>home</mat-icon>
+      <span translate>Início</span>
+    </button>
+    <button *ngIf="!logado" mat-button routerLink="/cadastrar" routerLinkActive="active">
+      <mat-icon>face</mat-icon>
+      <span translate>Login</span>
+    </button>
+    <button *ngIf="logado" mat-button routerLink="/reservas" routerLinkActive="active">
+      <mat-icon>directions_car</mat-icon>
+      <span translate>Reservas</span>
+    </button>
+    <button mat-button routerLink="/about" routerLinkActive="active">
+      <mat-icon>help</mat-icon>
+      <span translate>Sobre</span>
+    </button>
+  </div>
+  <span fxFlex></span>
+  <div *ngIf="logado">Bem vindo de volta: {{usuario}} &nbsp; &nbsp;
+    <button (click)="deslogar()" mat-icon-button color="secondary" aria-label="Deslogar">
+      <mat-icon>directions_run</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

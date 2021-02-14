@@ -1,0 +1,24 @@
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <mat-card-title translate>Minas Reservas</mat-card-title>
+      <mat-card-subtitle>Suas reservas já realizadas:
+      </mat-card-subtitle>
+      <div *ngFor="let reserva of reservas">
+        <mat-card>
+          <mat-card-content>
+            <mat-card-title translate><b>Data:</b> {{reserva.dataAluguel | date: 'd/M/yyyy, h:mm a':'-0600'}}</mat-card-title>
+            <mat-card-subtitle><b>Carro:</b> {{reserva.carro.modelo.modelo}}
+            </mat-card-subtitle>
+            <br/><b>Data de Retirada: </b>{{reserva.dataCheckin | date: 'd/M/yyyy, h:mm a':'-0600'}}
+            <br/><b>Data de Entrega: </b>{{reserva.dataCheckout | date: 'd/M/yyyy, h:mm a':'-0600'}}
+            <br/><b>Horas/Dia(s): </b>{{reserva.horas}} ({{reserva.horas/24 | number}})
+            <br/><b>Preço Total: </b>{{reserva.precoTotal | currency:'BRL'}}
+            <br/><b>Realizado no: </b>{{reserva.origem == 'WEB' ? "Website" : "Aplicativo"}}
+          </mat-card-content>
+        </mat-card>
+        <br />
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,60 @@
+<div class="container">
+  <mat-card>
+    <p>
+      <img class="logo" src="assets/logo_size.jpg" alt="angular logo" />
+    </p>
+    <mat-card-content>
+      <mat-card-title translate>Bem vindo a LocaCar!!</mat-card-title>
+      <mat-card-subtitle>
+        <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
+        <q [hidden]="isLoading">Realize uma simulação de locação abaixo:</q>
+      </mat-card-subtitle>
+
+      <mat-form-field style="width: 300px" appearance="fill">
+        <mat-label>Entre com um intervalo de datas</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input [(ngModel)]="DataIn" matStartDate placeholder="Dia de pegar o carro">
+          <input [(ngModel)]="DataOut" matEndDate placeholder="Dai de devolver o carro">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <br />
+      <mat-form-field style="width: 300px" appearance="fill">
+        <mat-label>Categoria</mat-label>
+        <mat-select (ngModelChange)="CarroSelecionado=0" [(ngModel)]="CategoriaSelecionada">
+          <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+            {{categoria.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field style="width: 300px" appearance="fill">
+        <mat-label>Carro</mat-label>
+        <mat-select [disabled]="CategoriaSelecionada == 0" [(ngModel)]="CarroSelecionado">
+          <mat-option *ngFor="let carros of listaCarros | filtrarCarroPorCategoria: CategoriaSelecionada"
+            [value]="carros.id">
+            {{carros.modelo.modelo}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <button [disabled]="CarroSelecionado == 0" (click)="simularLocacao()" style="width: 300px" mat-raised-button
+        color="primary">Solicitar
+        Simulação!</button>
+    </mat-card-content>
+  </mat-card>
+  <br />
+  <mat-card *ngIf="mostrarSimulacao">
+    <mat-card-content>
+      <p>
+        <mat-card-title translate>Simulação de Aluguel</mat-card-title>
+      </p>
+      <b>Horas alugadas:</b> {{simulacao.horas}} ({{simulacao.horas/24}} Dias)<br />
+      <b>Valor:</b> {{simulacao.precoTotal | currency:'BRL' }}
+      <br /><br/>
+      <button [disabled]="!mostrarSimulacao" (click)="alugar()" style="width: 300px" mat-raised-button
+        color="primary">Reservar!</button>
+    </mat-card-content>
+  </mat-card>
+</div>
