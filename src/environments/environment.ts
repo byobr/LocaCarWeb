@@ -17,7 +17,7 @@ export const environment = {
   defaultLanguage: 'pt-BR',
   supportedLanguages: ['pt-BR'],
 
-  apiLocaCar: "http://locacar.azurewebsites.net/api/"
+  apiLocaCar: 'http://locacar.azurewebsites.net/api/',
 };
 
 /*

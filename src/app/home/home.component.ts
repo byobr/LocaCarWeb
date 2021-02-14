@@ -80,9 +80,9 @@ export class HomeComponent implements OnInit {
       if (!this.saida.ExecutadoComSucesso) {
         this.alertas.open(this.saida.Mensagem, 'Ok!', { duration: 10000 });
       } else {
-        this.alertas.open("Reservado com sucesso!", 'Ok', { duration: 10000 });
+        this.alertas.open('Reservado com sucesso!', 'Ok', { duration: 10000 });
         setTimeout(() => {
-          this.nav.navigate(["/reservas"])
+          this.nav.navigate(['/reservas']);
         }, 3000);
       }
     } else {

@@ -34,21 +34,20 @@ export class ShellComponent implements OnInit {
       )
       .subscribe(() => this.sidenav.close());
 
-      this.token = JSON.parse(localStorage.getItem("usuario"));
-      if(this.token != null){
-        this.logado = true;
-        this.usuario = this.token.usuario;
-      }
+    this.token = JSON.parse(localStorage.getItem('usuario'));
+    if (this.token != null) {
+      this.logado = true;
+      this.usuario = this.token.usuario;
+    }
   }
 
-  deslogar(){
-    localStorage.setItem("usuario", null);
+  deslogar() {
+    localStorage.setItem('usuario', null);
     setTimeout(() => {
-      this.nav.navigate(["/home"]);
+      this.nav.navigate(['/home']);
       setTimeout(() => {
         location.reload();
       }, 100);
     }, 300);
   }
-
 }

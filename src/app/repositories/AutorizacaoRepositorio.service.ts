@@ -20,7 +20,7 @@ export class AutorizacaoRepositorioService {
 
   async CadastrarCliente(cliente: Cliente): Promise<SaidaAPI> {
     await this.http
-      .post(this.URL_AUTH_API + "Clientes/", cliente)
+      .post(this.URL_AUTH_API + 'Clientes/', cliente)
       .toPromise()
       .then((data) => {
         this.saida.Data = data['data'];
@@ -35,7 +35,7 @@ export class AutorizacaoRepositorioService {
     return this.saida;
   }
 
-  async Logar(usuario: string, senha:string): Promise<SaidaAPI> {
+  async Logar(usuario: string, senha: string): Promise<SaidaAPI> {
     let dados = new Login();
     dados.login = usuario;
     dados.senha = senha;

@@ -1,7 +1,7 @@
-import { Carros } from "./categorias/carros";
-import { Cliente } from "./categorias/clientes";
+import { Carros } from './categorias/carros';
+import { Cliente } from './categorias/clientes';
 
-export class Reservas{
+export class Reservas {
   id: number;
   carro: Carros;
   cliente: Cliente;

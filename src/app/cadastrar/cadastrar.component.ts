@@ -19,13 +19,15 @@ export class CadastrarComponent implements OnInit {
   usuario: string;
   senha: string;
 
-  constructor(private clienteRepositorio: AutorizacaoRepositorioService, private alertas: MatSnackBar,
-    private nav: Router) {}
+  constructor(
+    private clienteRepositorio: AutorizacaoRepositorioService,
+    private alertas: MatSnackBar,
+    private nav: Router
+  ) {}
 
   ngOnInit() {}
 
   async cadastrarCliente() {
-
     if (
       this.cliente.Celular != null ||
       this.cliente.Cpf != null ||
@@ -41,33 +43,28 @@ export class CadastrarComponent implements OnInit {
       } else {
         this.alertas.open('Cadastrado com sucesso!', 'OK', { duration: 10000 });
       }
-
     } else {
       this.alertas.open('Favor preencher os campos requeridos!', 'OK', { duration: 10000 });
     }
   }
 
   async logar(usuario: string, senha: string) {
-
-    if (
-      usuario != null ||
-      senha != null) {
+    if (usuario != null || senha != null) {
       this.saida = await this.clienteRepositorio.Logar(usuario, senha);
 
       if (!this.saida.ExecutadoComSucesso) {
         this.alertas.open(this.saida.Mensagem, 'OK', { duration: 10000 });
       } else {
         this.alertas.open('Logado com sucesso!', 'OK', { duration: 10000 });
-        this.token = this.saida["Data"] as TokenLC;
-        localStorage.setItem("usuario", JSON.stringify(this.token));
+        this.token = this.saida['Data'] as TokenLC;
+        localStorage.setItem('usuario', JSON.stringify(this.token));
         setTimeout(() => {
-          this.nav.navigate(["/"]);
+          this.nav.navigate(['/']);
           setTimeout(() => {
             location.reload();
           }, 250);
         }, 2500);
       }
-
     } else {
       this.alertas.open('Favor preencher os campos de usuário e senha', 'OK', { duration: 10000 });
     }

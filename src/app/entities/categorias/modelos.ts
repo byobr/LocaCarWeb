@@ -1,12 +1,9 @@
-import { Marcas } from "./marcas";
+import { Marcas } from './marcas';
 
-export class Modelos{
+export class Modelos {
   id: number;
   modelo: string;
   marca: Marcas;
 
-  constructor(){
-
-  }
-
+  constructor() {}
 }

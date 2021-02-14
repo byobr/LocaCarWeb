@@ -1,4 +1,4 @@
-export class TokenLC{
+export class TokenLC {
   usuario: string;
   perfil: string;
   token: string;

@@ -20,26 +20,24 @@ export class HeaderComponent implements OnInit {
   constructor(private titleService: Title, private nav: Router) {}
 
   ngOnInit() {
-    this.token = JSON.parse(localStorage.getItem("usuario"));
-    if(this.token != null){
+    this.token = JSON.parse(localStorage.getItem('usuario'));
+    if (this.token != null) {
       this.logado = true;
       this.usuario = this.token.usuario;
     }
-
   }
 
   get title(): string {
     return this.titleService.getTitle();
   }
 
-  deslogar(){
-    localStorage.setItem("usuario", null);
+  deslogar() {
+    localStorage.setItem('usuario', null);
     setTimeout(() => {
-      this.nav.navigate(["/home"]);
+      this.nav.navigate(['/home']);
       setTimeout(() => {
         location.reload();
       }, 100);
     }, 300);
   }
-
 }

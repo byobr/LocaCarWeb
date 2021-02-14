@@ -25,7 +25,13 @@
             <span>Sobre</span>
           </a>
           <mat-divider></mat-divider>
-          <a *ngIf="logado" routerLink="/" routerLinkActive="active"  mat-list-item (click)="sidenav.close();deslogar()">
+          <a
+            *ngIf="logado"
+            routerLink="/"
+            routerLinkActive="active"
+            mat-list-item
+            (click)="sidenav.close(); deslogar()"
+          >
             <span>Deslogar</span>
           </a>
         </mat-list>

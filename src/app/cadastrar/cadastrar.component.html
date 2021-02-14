@@ -2,81 +2,77 @@
   <mat-card>
     <mat-card-content>
       <mat-card-title translate>Logar</mat-card-title>
-      <mat-card-subtitle>
-        Informe seu CPF e senha abaixo:
-      </mat-card-subtitle>
-      <mat-form-field style="width: 300px;">
+      <mat-card-subtitle> Informe seu CPF e senha abaixo: </mat-card-subtitle>
+      <mat-form-field style="width: 300px">
         <mat-label>CPF</mat-label>
-        <input [(ngModel)]="usuario" matInput placeholder="Seu cpf">
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="usuario" matInput placeholder="Seu cpf" /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Senha</mat-label>
-        <input [(ngModel)]="senha" type="password" matInput placeholder="Sua senha">
-      </mat-form-field><br/>
-      <button (click)="logar(usuario, senha)" style="width: 300px" mat-raised-button
-        color="primary">Logar</button>
+        <input [(ngModel)]="senha" type="password" matInput placeholder="Sua senha" /> </mat-form-field
+      ><br />
+      <button (click)="logar(usuario, senha)" style="width: 300px" mat-raised-button color="primary">Logar</button>
     </mat-card-content>
   </mat-card>
   <br />
   <mat-card>
     <mat-card-content>
       <mat-card-title translate>Cadastrar</mat-card-title>
-      <mat-card-subtitle>
-        Informe os Dados abaixo
-      </mat-card-subtitle>
-      <mat-form-field style="width: 300px;">
+      <mat-card-subtitle> Informe os Dados abaixo </mat-card-subtitle>
+      <mat-form-field style="width: 300px">
         <mat-label>CPF</mat-label>
-        <input [(ngModel)]="cliente.Cpf" matInput placeholder="Seu cpf" required>
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="cliente.Cpf" matInput placeholder="Seu cpf" required /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Senha</mat-label>
-        <input [(ngModel)]="cliente.Senha" type="password" matInput placeholder="Sua senha" required>
+        <input [(ngModel)]="cliente.Senha" type="password" matInput placeholder="Sua senha" required />
       </mat-form-field>
       <br />
-      <mat-form-field style="width: 300px;">
+      <mat-form-field style="width: 300px">
         <mat-label>Nome</mat-label>
-        <input [(ngModel)]="cliente.Nome" matInput placeholder="Seu nome" required>
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="cliente.Nome" matInput placeholder="Seu nome" required /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Email</mat-label>
-        <input [(ngModel)]="cliente.Email" type="email" matInput placeholder="Seu email" required>
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="cliente.Email" type="email" matInput placeholder="Seu email" required /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Celular</mat-label>
-        <input [(ngModel)]="cliente.Celular" type="tel" matInput placeholder="Seu Celular" required>
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;" appearance="fill">
+        <input [(ngModel)]="cliente.Celular" type="tel" matInput placeholder="Seu Celular" required /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px" appearance="fill">
         <mat-label>Seu Aniversário</mat-label>
-        <input [(ngModel)]="cliente.Aniversaio" matInput [matDatepicker]="picker" required>
+        <input [(ngModel)]="cliente.Aniversaio" matInput [matDatepicker]="picker" required />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field><br/>
-      <mat-form-field style="width: 300px;">
+        <mat-datepicker #picker></mat-datepicker> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>CEP</mat-label>
-        <input [(ngModel)]="cliente.Cep" matInput placeholder="Seu Cep">
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="cliente.Cep" matInput placeholder="Seu Cep" /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Logradouro</mat-label>
-        <input [(ngModel)]="cliente.Logradouro" matInput placeholder="Seu Logradouro">
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="cliente.Logradouro" matInput placeholder="Seu Logradouro" /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Número</mat-label>
-        <input [(ngModel)]="cliente.Numero" matInput placeholder="Seu Cep">
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="cliente.Numero" matInput placeholder="Seu Cep" /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Complemento</mat-label>
-        <input [(ngModel)]="cliente.Complemento" matInput placeholder="Seu Complemento">
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="cliente.Complemento" matInput placeholder="Seu Complemento" /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Cidade</mat-label>
-        <input [(ngModel)]="cliente.Cidade" matInput placeholder="Seu Cep">
-      </mat-form-field><br />
-      <mat-form-field style="width: 300px;">
+        <input [(ngModel)]="cliente.Cidade" matInput placeholder="Seu Cep" /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 300px">
         <mat-label>Estado</mat-label>
-        <input [(ngModel)]="cliente.Estado" matInput placeholder="Seu Cep">
-      </mat-form-field><br />
-      <button (click)="cadastrarCliente()" style="width: 300px" mat-raised-button
-        color="primary">Cadastrar Cliente</button>
+        <input [(ngModel)]="cliente.Estado" matInput placeholder="Seu Cep" /> </mat-form-field
+      ><br />
+      <button (click)="cadastrarCliente()" style="width: 300px" mat-raised-button color="primary">
+        Cadastrar Cliente
+      </button>
     </mat-card-content>
   </mat-card>
 </div>
